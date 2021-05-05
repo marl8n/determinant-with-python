@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block head_content %}
+    <title>Determinatn | 3x3 </title>
+{% endblock head_content %}
+
+
+{% block body %}
+    <main>
+        <div class="form-container">
+            <h1>Calculate determinant</h1>
+            <form action="{% url 'calculate3x3' %}" method="post">
+                {% csrf_token %}
+                <div class="row-numbers">
+                    <input type="number" name="zero_zero" id="">
+                    <input type="number" name="zero_one" id="">
+                    <input type="number" name="zero_two" id="">
+                </div>
+                <div class="row-numbers">
+                    <input type="number" name="one_zero" id="">
+                    <input type="number" name="one_one" id="">
+                    <input type="number" name="one_two" id="">
+                </div>
+                <div class="row-numbers">
+                    <input type="number" name="two_zero" id="">
+                    <input type="number" name="two_one" id="">
+                    <input type="number" name="two_two" id="">
+                </div>
+                <input type="submit" value="Calculate">
+            </form>
+        </div>
+        {% if result %}
+            <div class="result">
+                <h2>Resultado</h2>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+            
+    </main>
+{% endblock body %}
+    
+    
