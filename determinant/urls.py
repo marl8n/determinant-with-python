@@ -18,9 +18,13 @@ from django.urls import path
 
 # Views
 from determinant import views as determinant_views
+import determinant
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', determinant_views.calculate_determinat4x4),
     path('3x3/', determinant_views.calculate_determinat3x3, name="calculate3x3"),
     path('4x4/', determinant_views.calculate_determinat4x4, name="calculate4x4"),
+    path('3x3inv',determinant_views.calculate_inv3x3, name='calculate3x3inv'),
+    path('4x4inv',determinant_views.calculate_inv4x4, name='calculate4x4inv'),
 ]

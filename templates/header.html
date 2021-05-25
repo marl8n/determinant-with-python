@@ -1,0 +1,12 @@
+
+{% block header %}
+    <header class="header">
+        <ul>
+            <li><a href="{% url 'calculate3x3' %}">3x3</a></li>
+            <li><a href="{% url 'calculate4x4' %}">4x4</a></li>
+            <li><a href="{% url 'calculate3x3inv' %}">3x3 inv</a></li>
+            <li><a href="{% url 'calculate4x4inv' %}">4x4 inv</a></li>
+        </ul>
+    </header>
+{% endblock header %}
+    

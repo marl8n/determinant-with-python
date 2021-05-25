@@ -9,8 +9,8 @@
 {% block body %}
     <main>
         <div class="form-container">
-            <h1>Calculate determinant</h1>
-            <form action="{% url 'calculate3x3' %}" method="post">
+            <h1>Calculate inverse</h1>
+            <form action="{% url 'calculate3x3inv' %}" method="post">
                 {% csrf_token %}
                 <div class="row-numbers">
                     <input type="text" name="zero_zero" id="">
@@ -29,17 +29,17 @@
                 </div>
                 <input type="submit" value="Calculate">
             </form>
+            {% if result %}
+                <div class="result3x3">
+                    <h2>Resultado</h2>
+                    <p>{{ result }}</p>
+                </div>
+            {% else %}
+                <div class="result">
+                    <h2>No se puede realizar o el resultado es 0</h2>
+                </div>
+            {% endif %}
         </div>
-        {% if result %}
-            <div class="result">
-                <h2>Resultado</h2>
-                <p>{{ result }}</p>
-            </div>
-        {% else %}
-            <div class="result">
-                <h2>No se puede realizar o el resultado es 0</h2>
-            </div>
-        {% endif %}
             
     </main>
 {% endblock body %}

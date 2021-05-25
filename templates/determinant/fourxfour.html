@@ -10,43 +10,43 @@
     <main>
         <div class="form-container">
             <h1>Calculate determinant</h1>
-            <form action="{% url 'calculate3x3' %}" method="post">
+            <form action="{% url 'calculate4x4inv' %}" method="post">
                 {% csrf_token %}
                 <div class="row-numbers">
-                    <input type="number" name="zero_zero" id="">
-                    <input type="number" name="zero_one" id="">
-                    <input type="number" name="zero_two" id="">
-                    <input type="number" name="zero_three" id="">
+                    <input type="text" name="zero_zero" id="">
+                    <input type="text" name="zero_one" id="">
+                    <input type="text" name="zero_two" id="">
+                    <input type="text" name="zero_three" id="">
                 </div>
                 <div class="row-numbers">
-                    <input type="number" name="one_zero" id="">
-                    <input type="number" name="one_one" id="">
-                    <input type="number" name="one_two" id="">
-                    <input type="number" name="one_three" id="">
+                    <input type="text" name="one_zero" id="">
+                    <input type="text" name="one_one" id="">
+                    <input type="text" name="one_two" id="">
+                    <input type="text" name="one_three" id="">
                 </div>
                 <div class="row-numbers">
-                    <input type="number" name="two_zero" id="">
-                    <input type="number" name="two_one" id="">
-                    <input type="number" name="two_two" id="">
-                    <input type="number" name="two_three" id="">
+                    <input type="text" name="two_zero" id="">
+                    <input type="text" name="two_one" id="">
+                    <input type="text" name="two_two" id="">
+                    <input type="text" name="two_three" id="">
                 </div>
                 <div class="row-numbers">
-                    <input type="number" name="three_zero" id="">
-                    <input type="number" name="three_one" id="">
-                    <input type="number" name="three_two" id="">
-                    <input type="number" name="three_three" id="">
+                    <input type="text" name="three_zero" id="">
+                    <input type="text" name="three_one" id="">
+                    <input type="text" name="three_two" id="">
+                    <input type="text" name="three_three" id="">
                 </div>
                 <input type="submit" value="Calculate">
             </form>
         </div>
         {% if result %}
-            <div class="result">
+            <div class="result4x4">
                 <h2>Resultado</h2>
                 <p>{{ result }}</p>
             </div>
         {% else %}
         <div class="result">
-            <h2>No se puede realizar</h2>
+            <h2>No se puede realizar o el resultado es 0</h2>
         </div>
         {% endif %}
             
